@@ -120,8 +120,8 @@
     box-shadow:0 40px 80px rgba(0,0,0,.45);
     display:flex;align-items:center;justify-content:center;
   }
-  .hero-portrait .ph{font-family:var(--serif);font-size:6rem;color:rgba(255,255,255,.18);}
-  .hero-portrait .ph small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center;margin-top:.5rem;}
+  .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+  .hero-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(13,22,38,.45));pointer-events:none;}
   .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.6);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;}
   .scroll-hint .line{width:1px;height:42px;background:linear-gradient(rgba(255,255,255,.6),transparent);margin:.6rem auto 0;}
 
@@ -307,7 +307,7 @@
       </div>
     </div>
     <div class="hero-portrait">
-      <div class="ph">CI<small>Portrait — drop photo here</small></div>
+      <img src="assets/CIHuang.png" alt="Chung-I Huang, Ph.D." />
     </div>
   </div>
   <div class="scroll-hint">Scroll<div class="line"></div></div>

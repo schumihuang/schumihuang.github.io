@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chung-I Huang, Ph.D. — AICV Lab</title>
+<meta name="description" content="Chung-I Huang, Ph.D. — Assistant Professor, National Chung Hsing University. Artificial Intelligence & Computer Vision Lab (AICV Lab). Research in deep learning, computer vision, medical imaging, and smart cities." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1a1d23;
+    --ink-soft:#4a4f57;
+    --muted:#8a9099;
+    --line:#e6e3dd;
+    --paper:#ffffff;
+    --cream:#f7f5f0;
+    --cream-deep:#efece4;
+    --accent:#1f3a5f;       /* deep editorial navy */
+    --accent-bright:#2f6db0;
+    --gold:#b8924f;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter','Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --tc:'Noto Sans TC', sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    font-weight:300;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);font-weight:500;margin-bottom:1.1rem;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:.01em;}
+  h2.section-title{font-size:clamp(2rem,4.2vw,3rem);color:var(--ink);margin-bottom:.4rem;}
+  .section-sub{color:var(--ink-soft);font-size:1.02rem;max-width:620px;margin-top:.9rem;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,255,255,0);
+    transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+    padding:26px 0;
+  }
+  header.nav.scrolled{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    box-shadow:0 1px 0 var(--line);
+    padding:16px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:var(--serif);font-size:1.45rem;font-weight:600;letter-spacing:.02em;color:#fff;transition:color .4s;}
+  header.nav.scrolled .brand{color:var(--ink);}
+  .brand .dot{color:var(--gold);}
+  .nav-links{display:flex;gap:2.4rem;align-items:center;}
+  .nav-links a{
+    font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;
+    color:rgba(255,255,255,.85);transition:color .3s;position:relative;
+  }
+  header.nav.scrolled .nav-links a{color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--gold);}
+  header.nav.scrolled .nav-links a:hover{color:var(--accent-bright);}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;}
+  .nav-toggle span{width:24px;height:2px;background:#fff;display:block;transition:.3s;}
+  header.nav.scrolled .nav-toggle span{background:var(--ink);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;position:relative;
+    background:
+      linear-gradient(120deg, rgba(15,24,40,.86) 0%, rgba(20,40,72,.72) 45%, rgba(31,58,95,.55) 100%),
+      radial-gradient(1200px 600px at 80% 10%, rgba(47,109,176,.35), transparent 60%),
+      #0d1626;
+    color:#fff;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;opacity:.10;mix-blend-mode:screen;
+    background-image:
+      linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(900px 500px at 75% 30%, #000, transparent 75%);
+            mask-image:radial-gradient(900px 500px at 75% 30%, #000, transparent 75%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:60px;align-items:center;width:100%;position:relative;z-index:2;}
+  .hero-eyebrow{color:var(--gold);letter-spacing:.3em;font-size:.74rem;text-transform:uppercase;font-weight:500;margin-bottom:1.6rem;}
+  .hero h1{font-size:clamp(2.8rem,6vw,4.8rem);color:#fff;margin-bottom:.5rem;}
+  .hero h1 .zh{font-family:var(--tc);font-weight:500;font-size:.42em;display:block;letter-spacing:.05em;color:rgba(255,255,255,.78);margin-top:.6rem;}
+  .hero-role{font-size:1.15rem;color:rgba(255,255,255,.82);font-weight:300;margin:1.4rem 0 .3rem;}
+  .hero-affil{font-size:.98rem;color:rgba(255,255,255,.62);}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.2rem;}
+  .tag{
+    font-size:.74rem;letter-spacing:.08em;padding:.5rem 1rem;border:1px solid rgba(255,255,255,.25);
+    border-radius:100px;color:rgba(255,255,255,.85);
+  }
+  .hero-cta{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn{
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:.95rem 1.9rem;
+    border-radius:2px;transition:.3s;font-weight:500;display:inline-block;
+  }
+  .btn-primary{background:var(--gold);color:#1a1206;}
+  .btn-primary:hover{background:#cda767;}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+  .hero-portrait{
+    position:relative;aspect-ratio:3/4;border-radius:3px;overflow:hidden;
+    background:linear-gradient(160deg,#22304a,#16263f);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 40px 80px rgba(0,0,0,.45);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-portrait .ph{font-family:var(--serif);font-size:6rem;color:rgba(255,255,255,.18);}
+  .hero-portrait .ph small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center;margin-top:.5rem;}
+  .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.6);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;}
+  .scroll-hint .line{width:1px;height:42px;background:linear-gradient(rgba(255,255,255,.6),transparent);margin:.6rem auto 0;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:120px 0;}
+  .section-head{margin-bottom:64px;}
+  .alt{background:var(--cream);}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:start;}
+  .about-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:38px;box-shadow:0 24px 60px rgba(26,29,35,.06);}
+  .about-card h3{font-size:1.5rem;margin-bottom:1.2rem;}
+  .lede{font-size:1.28rem;line-height:1.6;font-family:var(--serif);color:var(--ink);font-weight:500;}
+  .about p{margin-top:1.3rem;color:var(--ink-soft);}
+  .facts{list-style:none;margin-top:.5rem;}
+  .facts li{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);}
+  .facts li:last-child{border-bottom:0;}
+  .facts .yr{font-family:var(--serif);font-size:1.05rem;color:var(--accent);font-weight:600;min-width:108px;}
+  .facts .what{color:var(--ink-soft);font-size:.96rem;}
+  .facts .what b{color:var(--ink);font-weight:500;}
+
+  /* Research areas */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .area{
+    border:1px solid var(--line);border-radius:4px;padding:34px 30px;background:var(--paper);
+    transition:.35s;position:relative;overflow:hidden;
+  }
+  .area::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:.35s;}
+  .area:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(26,29,35,.10);}
+  .area:hover::before{transform:scaleY(1);}
+  .area .num{font-family:var(--serif);font-size:1rem;color:var(--gold);font-weight:600;letter-spacing:.1em;}
+  .area h3{font-size:1.32rem;margin:.7rem 0 .7rem;}
+  .area p{font-size:.92rem;color:var(--ink-soft);}
+
+  /* Awards */
+  .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;}
+  .award{display:grid;grid-template-columns:88px 1fr;gap:1.4rem;padding:28px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .award .yr{font-family:var(--serif);font-size:1.9rem;color:var(--accent);font-weight:600;line-height:1;}
+  .award h3{font-size:1.12rem;font-family:var(--sans);font-weight:600;color:var(--ink);margin-bottom:.35rem;letter-spacing:0;}
+  .award p{font-size:.92rem;color:var(--ink-soft);}
+  .award .venue{color:var(--gold);font-weight:500;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:.3rem;}
+
+  /* Publications */
+  .pubs{counter-reset:pub;}
+  .pub{
+    display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:baseline;
+    padding:26px 0;border-bottom:1px solid var(--line);transition:.3s;
+  }
+  .pub:hover{padding-left:10px;}
+  .pub .idx{counter-increment:pub;font-family:var(--serif);font-size:1.1rem;color:var(--muted);min-width:30px;}
+  .pub .idx::before{content:counter(pub,decimal-leading-zero);}
+  .pub .title{font-size:1.04rem;color:var(--ink);font-weight:400;line-height:1.45;}
+  .pub .meta{display:block;margin-top:.4rem;color:var(--ink-soft);font-size:.9rem;font-style:italic;font-family:var(--serif);}
+  .pub .badge{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border-radius:100px;white-space:nowrap;font-weight:500;align-self:center;}
+  .badge.q1{background:#eaf2ff;color:#1f3a5f;}
+  .badge.sci{background:var(--cream-deep);color:var(--ink-soft);}
+  .badge.acc{background:#eaf6ee;color:#2c7a4b;}
+
+  /* Patents */
+  .patents{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .patent{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:30px;display:flex;gap:1.2rem;}
+  .patent .ic{font-family:var(--serif);font-size:1.6rem;color:var(--gold);line-height:1;}
+  .patent h3{font-size:1.05rem;font-family:var(--sans);font-weight:600;letter-spacing:0;margin-bottom:.5rem;line-height:1.4;}
+  .patent .zh{font-family:var(--tc);font-weight:400;}
+  .patent .no{font-size:.82rem;color:var(--accent);font-weight:500;letter-spacing:.04em;}
+  .patent .role{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
+
+  /* Projects timeline */
+  .timeline{position:relative;margin-left:8px;}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tl{position:relative;padding:0 0 34px 42px;}
+  .tl::before{content:"";position:absolute;left:0;top:7px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);}
+  .tl .when{font-family:var(--serif);font-size:.95rem;color:var(--accent);font-weight:600;letter-spacing:.03em;}
+  .tl h3{font-size:1.12rem;font-family:var(--sans);font-weight:500;letter-spacing:0;margin-top:.25rem;color:var(--ink);}
+
+  /* Lab */
+  .lab-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:64px;}
+  .lab-panel{background:linear-gradient(160deg,#142844,#1f3a5f);color:#fff;border-radius:6px;padding:54px 46px;}
+  .lab-panel .eyebrow{color:var(--gold);}
+  .lab-panel h3{font-size:2.1rem;color:#fff;margin-bottom:.3rem;}
+  .lab-panel .zh{font-family:var(--tc);font-weight:500;font-size:1.15rem;color:rgba(255,255,255,.8);}
+  .lab-panel p{color:rgba(255,255,255,.78);margin-top:1.4rem;font-weight:300;}
+  .lab-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .stat{border:1px solid var(--line);border-radius:4px;padding:30px;text-align:center;background:var(--paper);}
+  .stat .n{font-family:var(--serif);font-size:2.6rem;color:var(--accent);font-weight:600;line-height:1;}
+  .stat .l{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.6rem;}
+  .members{margin-top:10px;}
+  .member-group{margin-bottom:30px;}
+  .member-group h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;}
+  .member-chips{display:flex;flex-wrap:wrap;gap:12px;}
+  .chip{
+    font-family:var(--tc);background:var(--paper);border:1px solid var(--line);border-radius:100px;
+    padding:.6rem 1.3rem;font-size:.95rem;color:var(--ink);font-weight:400;transition:.3s;
+  }
+  .chip:hover{border-color:var(--gold);color:var(--accent);}
+  .chip .grade{color:var(--muted);font-size:.78rem;margin-right:.4rem;}
+
+  /* Service */
+  .service{columns:2;column-gap:56px;}
+  .svc{break-inside:avoid;display:flex;gap:1.2rem;padding:18px 0;border-bottom:1px solid var(--line);}
+  .svc .yr{font-family:var(--serif);font-weight:600;color:var(--accent);min-width:74px;font-size:1rem;}
+  .svc p{font-size:.94rem;color:var(--ink-soft);}
+
+  /* Contact */
+  .contact{background:#0d1626;color:#fff;text-align:center;}
+  .contact .eyebrow{color:var(--gold);}
+  .contact h2{color:#fff;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:1.2rem;}
+  .contact p{color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 2.4rem;}
+  .contact-mail{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);color:var(--gold);letter-spacing:.02em;border-bottom:1px solid rgba(184,146,79,.4);padding-bottom:.3rem;transition:.3s;}
+  .contact-mail:hover{color:#d8b878;border-color:#d8b878;}
+  .contact-meta{margin-top:2.6rem;display:flex;gap:2.6rem;justify-content:center;flex-wrap:wrap;color:rgba(255,255,255,.55);font-size:.9rem;}
+
+  footer{background:#080d16;color:rgba(255,255,255,.5);padding:34px 0;font-size:.82rem;}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .foot-inner .brand{font-size:1.1rem;color:rgba(255,255,255,.85);}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:920px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-portrait{display:none;}
+    .about-grid,.lab-intro{grid-template-columns:1fr;gap:40px;}
+    .areas,.patents{grid-template-columns:1fr 1fr;}
+    .awards{grid-template-columns:1fr;}
+    .lab-stats{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px;}
+    section{padding:84px 0;}
+    .nav-links{
+      position:fixed;inset:0;background:#0d1626;flex-direction:column;justify-content:center;
+      gap:2rem;transform:translateX(100%);transition:transform .4s ease;
+    }
+    .nav-links.open{transform:none;}
+    .nav-links a{color:#fff!important;font-size:1rem;}
+    .nav-toggle{display:flex;z-index:120;}
+    .areas,.patents,.service,.lab-stats{grid-template-columns:1fr;}
+    .service{columns:1;}
+    .pub{grid-template-columns:1fr;gap:.4rem;}
+    .pub .badge{justify-self:start;}
+    .award{grid-template-columns:64px 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Chung-I&nbsp;Huang<span class="dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#awards">Awards</a>
+      <a href="#publications">Publications</a>
+      <a href="#lab">Lab</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">National Chung Hsing University · Information Management</div>
+      <h1>Chung-I Huang<span class="zh">黃崇益　博士</span></h1>
+      <p class="hero-role">Assistant Professor · Director, AICV Lab</p>
+      <p class="hero-affil">Artificial Intelligence &amp; Computer Vision Laboratory</p>
+      <div class="hero-tags">
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Medical Imaging</span>
+        <span class="tag">Smart Cities</span>
+        <span class="tag">Object Detection</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#research" class="btn btn-primary">Explore Research</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="ph">CI<small>Portrait — drop photo here</small></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll<div class="line"></div></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="eyebrow">Profile</div>
+        <h3>Education &amp; Career</h3>
+        <ul class="facts">
+          <li><span class="yr">2026 –</span><span class="what"><b>Assistant Professor</b>, Dept. of Information Management, National Chung Hsing University</span></li>
+          <li><span class="yr">2024 – 25</span><span class="what">Graduate Instructor, Power Mechanical Engineering, <b>National Tsing Hua University</b></span></li>
+          <li><span class="yr">2012 –</span><span class="what">Researcher, <b>National Center for High-Performance Computing (NCHC)</b></span></li>
+          <li><span class="yr">2011</span><span class="what"><b>Ph.D.</b>, Computer Science &amp; Information Engineering, National Cheng Kung University</span></li>
+          <li><span class="yr">2005</span><span class="what"><b>M.S.</b>, Computer Science &amp; Information Engineering, National Taiwan Normal University</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">Turning vision into <em>urban intelligence.</em></h2>
+        <p class="lede" style="margin-top:1.6rem;">
+          I build deep-learning and computer-vision systems that read the physical world — from city traffic
+          to medical images — and translate it into decisions people can act on.
+        </p>
+        <p>
+          My work spans image processing, deep learning, medical image analysis, data mining and smart-city
+          infrastructure. Across more than a decade at the National Center for High-Performance Computing and
+          National Tsing Hua University, I have led research that moves from competition-winning models to
+          deployed systems and granted patents.
+        </p>
+        <p>
+          Today, as Director of the AICV Lab at National Chung Hsing University, I focus on interpretable,
+          agent-based AI for transportation, surveillance and risk assessment — research recognised at ICCV,
+          ICPR, CVPR and IEEE workshops.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH ===== -->
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Research Focus</div>
+      <h2 class="section-title">Where I work</h2>
+      <p class="section-sub">Six intersecting directions, united by a single goal: making perception systems that are accurate, efficient and explainable.</p>
+    </div>
+    <div class="areas">
+      <div class="area reveal"><div class="num">01</div><h3>Deep Learning</h3><p>Lightweight, robust architectures — from xLSTM to recurrent models that survive missing data in the real world.</p></div>
+      <div class="area reveal"><div class="num">02</div><h3>Computer Vision</h3><p>Multi-object tracking, re-identification and detection across UAV, maritime and urban surveillance scenes.</p></div>
+      <div class="area reveal"><div class="num">03</div><h3>Medical Imaging</h3><p>Image processing and analysis pipelines that bring deep learning to clinical and biomedical data.</p></div>
+      <div class="area reveal"><div class="num">04</div><h3>Smart Cities &amp; ITS</h3><p>Traffic forecasting, congestion warning and signal optimisation for intelligent transportation governance.</p></div>
+      <div class="area reveal"><div class="num">05</div><h3>Agentic &amp; Multimodal AI</h3><p>Grounded multi-agent LLM frameworks for interpretable risk assessment and spatial question answering.</p></div>
+      <div class="area reveal"><div class="num">06</div><h3>Data Mining</h3><p>Retrieval-augmented and pattern-recognition methods that turn raw sensor streams into actionable insight.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AWARDS ===== -->
+<section id="awards">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2 class="section-title">Awards &amp; championships</h2>
+      <p class="section-sub">First-place finishes at the field's flagship competitions, plus national technology honours.</p>
+    </div>
+    <div class="awards">
+      <div class="award reveal">
+        <div class="yr">’25</div>
+        <div><span class="venue">ICCV 2025 · Track 3</span><h3>Accuracy Champion</h3><p>Warehouse Spatial Question Answering with an LLM Agent.</p></div>
+      </div>
+      <div class="award reveal">
+        <div class="yr">’24</div>
+        <div><span class="venue">Future Technology Award 2024</span><h3>Award Recipient</h3><p>Smart Traffic Congestion Warning &amp; Police Duty Support System.</p></div>
+      </div>
+      <div class="award reveal">
+        <div class="yr">’24</div>
+        <div><span class="venue">IEEE MaCVi 2024</span><h3>Global Accuracy Champion ×2</h3><p>UAV-based Multi-Object Re-identification &amp; USV-based Multi-Object Tracking.</p></div>
+      </div>
+      <div class="award reveal">
+        <div class="yr">’24</div>
+        <div><span class="venue">ICPR 2024</span><h3>Global Accuracy Winner</h3><p>Multi-Modal Visual Pattern Recognition Challenge.</p></div>
+      </div>
+      <div class="award reveal">
+        <div class="yr">’23</div>
+        <div><span class="venue">CVPR 2023 · AI City Challenge</span><h3>Multi-Target Tracking Champion</h3><p>Top accuracy in the AI City Challenge workshop.</p></div>
+      </div>
+      <div class="award reveal">
+        <div class="yr">’20</div>
+        <div><span class="venue">Legal Tech Hackathon 2020</span><h3>Special Award</h3><p>Recognised for applied AI innovation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PUBLICATIONS ===== -->
+<section id="publications" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Selected Journal Publications</div>
+      <h2 class="section-title">Recent work</h2>
+      <p class="section-sub">A selection of recent SCI journal articles. Corresponding-author papers reflect work led within the AICV Lab.</p>
+    </div>
+    <div class="pubs">
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">A grounded multi-agent multimodal large language model framework for interpretable risk assessment in driving scenes</span>
+        <span class="meta">Computers, Materials &amp; Continua · June 2026 · Corresponding author</span></div>
+        <span class="badge sci">SCI</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">Hybrid Retrieval-Augmented Generation for Interpretable Traffic Forecasting in Urban ITS</span>
+        <span class="meta">IEEE Canadian Journal of Electrical &amp; Computer Engineering · 2026 · Corresponding author</span></div>
+        <span class="badge sci">SCI</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">Learning From Easy to Hard: Fingerprint Spoof Detection with Hard Sample Mining</span>
+        <span class="meta">IEEE Transactions on Artificial Intelligence · 2026</span></div>
+        <span class="badge acc">Accepted</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">A Lightweight Recurrent Architecture for Robust Urban Traffic Forecasting with Missing Data</span>
+        <span class="meta">IEEE Open Journal of Intelligent Transportation Systems · 2025 · IF 5.3</span></div>
+        <span class="badge q1">Q1</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">Hardware Implementation of Improved Oriented FAST and Rotated BRIEF-SLAM Version 2</span>
+        <span class="meta">Sensors · 2025 · IF 3.5</span></div>
+        <span class="badge sci">SCI</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div><span class="title">xLSTM-Based Urban Traffic Flow Prediction for Intelligent Transportation Governance</span>
+        <span class="meta">Applied Sciences · 2025 · IF 2.5</span></div>
+        <span class="badge sci">SCI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PATENTS ===== -->
+<section id="patents">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Technology Transfer</div>
+      <h2 class="section-title">Granted patents</h2>
+      <p class="section-sub">Four granted patents in Taiwan (ROC) and the United States — all as first inventor.</p>
+    </div>
+    <div class="patents">
+      <div class="patent reveal">
+        <div class="ic">◆</div>
+        <div><h3>Method for Estimating a Number of Objects <span class="zh">物品數量估算方法</span></h3>
+        <div class="no">US 9,519,960 · ROC 509212</div><div class="role">First Inventor</div></div>
+      </div>
+      <div class="patent reveal">
+        <div class="ic">◆</div>
+        <div><h3>Image-Based Vehicle Classification System <span class="zh">以影像為基礎之車輛計數與分類系統</span></h3>
+        <div class="no">US 10,572,741 · ROC I640964</div><div class="role">First Inventor</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Funded Research</div>
+      <h2 class="section-title">Project timeline</h2>
+      <p class="section-sub">A decade of applied research projects spanning smart cities, disaster prevention and immersive technology.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><div class="when">2026.1 – 2026.12</div><h3>PGNN Model Algorithm Enhancement</h3></div>
+      <div class="tl reveal"><div class="when">2024.8 – 2025.7</div><h3>Smart Traffic Congestion Prediction &amp; Signal Optimization System</h3></div>
+      <div class="tl reveal"><div class="when">2021.11 – 2023.11</div><h3>AI Architecture for Disaster Prevention &amp; Mitigation (TWAI)</h3></div>
+      <div class="tl reveal"><div class="when">2020 – 2021</div><h3>IoT &amp; AI Urban Science Technology Development</h3></div>
+      <div class="tl reveal"><div class="when">2020 – 2021</div><h3>Gait-Based Person Tracking via Energy Maps for Complex Long-Distance Motion</h3></div>
+      <div class="tl reveal"><div class="when">2018 – 2019</div><h3>Fengyuan Huludun Park Visitor-Flow Monitoring Service</h3></div>
+      <div class="tl reveal"><div class="when">2017 – 2018</div><h3>National Museum of Marine Science &amp; Technology — VR / AR / MR Development</h3></div>
+      <div class="tl reveal"><div class="when">2016 – 2018</div><h3>Smart City Automated Traffic-Flow Estimation &amp; Classification System</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LAB ===== -->
+<section id="lab">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">實驗室 · The Lab</div>
+      <h2 class="section-title">AICV Lab</h2>
+    </div>
+    <div class="lab-intro">
+      <div class="lab-panel reveal">
+        <div class="eyebrow">Artificial Intelligence &amp; Computer Vision</div>
+        <h3>AICV Lab</h3>
+        <div class="zh">人工智慧與電腦視覺實驗室</div>
+        <p>
+          We research deep learning and computer vision for real-world perception — traffic, surveillance,
+          medical imaging and agentic multimodal AI. Students work hands-on with the same systems that win
+          at ICCV, ICPR and CVPR and ship as deployed, patented technology.
+        </p>
+      </div>
+      <div class="lab-stats reveal">
+        <div class="stat"><div class="n">4</div><div class="l">Granted Patents</div></div>
+        <div class="stat"><div class="n">5+</div><div class="l">Competition Titles</div></div>
+        <div class="stat"><div class="n">10+</div><div class="l">Years Research</div></div>
+        <div class="stat"><div class="n">7</div><div class="l">Lab Members</div></div>
+      </div>
+    </div>
+
+    <div class="members reveal">
+      <div class="member-group">
+        <h4>Graduate Students</h4>
+        <div class="member-chips">
+          <span class="chip"><span class="grade">115</span>涂允澤</span>
+        </div>
+      </div>
+      <div class="member-group">
+        <h4>Undergraduate Project Students · 115 學年度</h4>
+        <div class="member-chips">
+          <span class="chip">王柏皓</span>
+          <span class="chip">徐帆</span>
+          <span class="chip">鄭詠琳</span>
+          <span class="chip">呂益安</span>
+          <span class="chip">張晏綾</span>
+          <span class="chip">林鋒諺</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section id="service" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Academic Service &amp; Teaching</div>
+      <h2 class="section-title">Beyond the lab</h2>
+    </div>
+    <div class="service">
+      <div class="svc reveal"><span class="yr">2025</span><p>Industrial Chair, IEEE Conference on Advanced Video and Signal-Based Surveillance (AVSS)</p></div>
+      <div class="svc reveal"><span class="yr">2024–25</span><p>Graduate-course Instructor, Power Mechanical Engineering, National Tsing Hua University</p></div>
+      <div class="svc reveal"><span class="yr">2021</span><p>Co-director, Ministry of Education AI Talent Cultivation Program</p></div>
+      <div class="svc reveal"><span class="yr">2018</span><p>AI Course Instructor, Accounting Information Systems, Providence University</p></div>
+      <div class="svc reveal"><span class="yr">2017</span><p>Best Industry-Academic Application Value Award, National University Software Competition</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Let's build intelligent systems together.</h2>
+      <p>Open to research collaboration, graduate-student inquiries, and industry partnerships in AI and computer vision.</p>
+      <a href="mailto:schumi@nchu.edu.tw" class="contact-mail">schumi@nchu.edu.tw</a>
+      <div class="contact-meta">
+        <span>Dept. of Information Management</span>
+        <span>National Chung Hsing University</span>
+        <span>Taichung, Taiwan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="brand">Chung-I Huang<span style="color:var(--gold)">.</span></span>
+    <span>© 2026 AICV Lab · National Chung Hsing University. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

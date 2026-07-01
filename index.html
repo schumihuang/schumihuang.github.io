@@ -180,6 +180,18 @@
   .badge.q1{background:#eaf2ff;color:#1f3a5f;}
   .badge.sci{background:var(--cream-deep);color:var(--ink-soft);}
   .badge.acc{background:#eaf6ee;color:#2c7a4b;}
+  .pub .authors{display:block;font-size:.85rem;color:var(--ink-soft);line-height:1.55;margin-bottom:.4rem;}
+  .pub .authors b{color:var(--ink);font-weight:600;}
+
+  /* News / Recent work feed */
+  .news{max-width:840px;}
+  .news-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:26px 0;border-bottom:1px solid var(--line);align-items:start;transition:.3s;}
+  .news-item:hover{padding-left:10px;}
+  .news-date{font-family:var(--serif);font-size:1.15rem;color:var(--accent);font-weight:600;letter-spacing:.03em;}
+  .news-body h3{font-size:1.18rem;font-family:var(--sans);font-weight:600;letter-spacing:0;margin-bottom:.35rem;color:var(--ink);}
+  .news-body p{font-size:.95rem;color:var(--ink-soft);}
+  .news-body .cat{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:.35rem;}
+  @media(max-width:680px){ .news-item{grid-template-columns:1fr;gap:.5rem;} .news-item:hover{padding-left:0;} }
 
   /* Patents */
   .patents{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
@@ -279,6 +291,7 @@
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#awards">Awards</a>
+      <a href="#news">News</a>
       <a href="#publications">Publications</a>
       <a href="#lab">Lab</a>
       <a href="#contact">Contact</a>
@@ -408,44 +421,113 @@
   </div>
 </section>
 
+<!-- ===== NEWS / RECENT WORK ===== -->
+<section id="news">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Latest News &amp; Activities</div>
+      <h2 class="section-title">Recent work</h2>
+      <p class="section-sub">Updates from the AICV Lab — new papers, awards, talks and lab activities.</p>
+    </div>
+    <div class="news">
+      <article class="news-item reveal">
+        <div class="news-date">2026 · 02</div>
+        <div class="news-body"><span class="cat">Appointment</span><h3>Joined National Chung Hsing University</h3><p>Appointed Assistant Professor in the Department of Information Management and founded the AICV Lab.</p></div>
+      </article>
+      <article class="news-item reveal">
+        <div class="news-date">2026 · 07</div>
+        <div class="news-body"><span class="cat">Publication</span><h3>New paper in <em>Bioengineering</em></h3><p>"Balanced Mixing on Feature Space for Imbalanced Breast Cancer Classification" published in Bioengineering 13(7).</p></div>
+      </article>
+      <article class="news-item reveal">
+        <div class="news-date">2026</div>
+        <div class="news-body"><span class="cat">Publication</span><h3>Paper accepted — <em>IEEE Sensors Journal</em></h3><p>"Advancing Sound Event Localization and Detection" accepted for publication.</p></div>
+      </article>
+      <article class="news-item reveal">
+        <div class="news-date">2025</div>
+        <div class="news-body"><span class="cat">Award</span><h3>ICCV 2025 Track 3 — Accuracy Champion</h3><p>First place in Warehouse Spatial Question Answering with an LLM Agent.</p></div>
+      </article>
+      <article class="news-item reveal">
+        <div class="news-date">2024</div>
+        <div class="news-body"><span class="cat">Award</span><h3>Future Technology Award &amp; international championships</h3><p>Received the 2024 Future Technology Award; global champion at IEEE MaCVi and ICPR challenges.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PUBLICATIONS ===== -->
 <section id="publications" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Selected Journal Publications</div>
-      <h2 class="section-title">Recent work</h2>
-      <p class="section-sub">A selection of recent SCI journal articles. Corresponding-author papers reflect work led within the AICV Lab.</p>
+      <div class="eyebrow">Journal Publications</div>
+      <h2 class="section-title">Publications</h2>
+      <p class="section-sub">Complete list of journal publications — <b>C.-I. Huang</b> shown in bold.</p>
     </div>
     <div class="pubs">
       <div class="pub reveal">
         <span class="idx"></span>
-        <div><span class="title">Advancing Sound Event Localization and Detection: A Multi-Branch Time-Frequency Separable Convolutional Compression Network Approach</span>
-        <span class="meta">IEEE Sensors Journal · 2026 · Accepted for publication</span></div>
+        <div>
+          <span class="authors">W. R. Putri, S.-T. Yang, B.-T. Pham, P.-C. Chan, A. Dang, S.-K. Chen, <b>C.-I. Huang</b>, K.-C. Li, S.-L. Chen, P.-C. Chang, and J.-C. Wang</span>
+          <span class="title">"Advancing Sound Event Localization and Detection: A Multi-Branch Time-Frequency Separable Convolutional Compression Network Approach"</span>
+          <span class="meta">IEEE Sensors Journal · 2026 · Accepted for publication</span>
+        </div>
         <span class="badge acc">Accepted</span>
       </div>
       <div class="pub reveal">
         <span class="idx"></span>
-        <div><span class="title">Benign Share Benefit to Malignant: Balanced Mixing on Feature Space for Imbalanced Breast Cancer Classification</span>
-        <span class="meta">Bioengineering · 2026 · 13(7):765 · DOI 10.3390/bioengineering13070765</span></div>
+        <div>
+          <span class="authors">F. H. Raswa, M. Fadlurrohman, B.-T. Pham, I. Candradewi, Afiahayati, M.-H. Su, <b>C.-I. Huang</b>, K.-C. Li, S.-L. Chen, Y.-H. Li, et al.</span>
+          <span class="title">"Benign Share Benefit to Malignant: Balanced Mixing on Feature Space for Imbalanced Breast Cancer Classification"</span>
+          <span class="meta">Bioengineering · 2026 · 13(7):765 · DOI 10.3390/bioengineering13070765</span>
+        </div>
         <span class="badge sci">SCI</span>
       </div>
       <div class="pub reveal">
         <span class="idx"></span>
-        <div><span class="title">A grounded multi-agent multimodal large language model framework for interpretable risk assessment in driving scenes</span>
-        <span class="meta">Computers, Materials &amp; Continua · June 2026 · Corresponding author</span></div>
+        <div>
+          <span class="title">"A Grounded Multi-Agent Multimodal Large Language Model Framework for Interpretable Risk Assessment in Driving Scenes"</span>
+          <span class="meta">Computers, Materials &amp; Continua · June 2026 · Corresponding author</span>
+        </div>
         <span class="badge sci">SCI</span>
       </div>
       <div class="pub reveal">
         <span class="idx"></span>
-        <div><span class="title">Hybrid Retrieval-Augmented Generation for Interpretable Traffic Forecasting in Urban ITS</span>
-        <span class="meta">IEEE Canadian Journal of Electrical &amp; Computer Engineering · 2026 · Corresponding author</span></div>
+        <div>
+          <span class="title">"Hybrid Retrieval-Augmented Generation for Interpretable Traffic Forecasting in Urban ITS"</span>
+          <span class="meta">IEEE Canadian Journal of Electrical &amp; Computer Engineering · 2026 · Corresponding author</span>
+        </div>
         <span class="badge sci">SCI</span>
       </div>
       <div class="pub reveal">
         <span class="idx"></span>
-        <div><span class="title">Learning From Easy to Hard: Fingerprint Spoof Detection with Hard Sample Mining</span>
-        <span class="meta">IEEE Transactions on Artificial Intelligence · 2026</span></div>
+        <div>
+          <span class="title">"Learning From Easy to Hard: Fingerprint Spoof Detection with Hard Sample Mining"</span>
+          <span class="meta">IEEE Transactions on Artificial Intelligence · 2026 · Accepted</span>
+        </div>
         <span class="badge acc">Accepted</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div>
+          <span class="title">"A Lightweight Recurrent Architecture for Robust Urban Traffic Forecasting with Missing Data"</span>
+          <span class="meta">IEEE Open Journal of Intelligent Transportation Systems · 2025 · IF 5.3</span>
+        </div>
+        <span class="badge q1">Q1</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div>
+          <span class="title">"Hardware Implementation of Improved Oriented FAST and Rotated BRIEF-SLAM Version 2"</span>
+          <span class="meta">Sensors · 2025 · IF 3.5</span>
+        </div>
+        <span class="badge sci">SCI</span>
+      </div>
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div>
+          <span class="title">"xLSTM-Based Urban Traffic Flow Prediction for Intelligent Transportation Governance"</span>
+          <span class="meta">Applied Sciences · 2025 · IF 2.5</span>
+        </div>
+        <span class="badge sci">SCI</span>
       </div>
     </div>
   </div>

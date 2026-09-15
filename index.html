@@ -17,7 +17,7 @@
     --paper:#ffffff;
     --cream:#f7f5f0;
     --cream-deep:#efece4;
-    --accent:#1f3a5f;       /* deep editorial navy */
+    --accent:#1f3a5f;
     --accent-bright:#2f6db0;
     --gold:#b8924f;
     --serif:'Cormorant Garamond', Georgia, serif;
@@ -46,7 +46,6 @@
   h2.section-title{font-size:clamp(2rem,4.2vw,3rem);color:var(--ink);margin-bottom:.4rem;}
   .section-sub{color:var(--ink-soft);font-size:1.02rem;max-width:620px;margin-top:.9rem;}
 
-  /* ---------- NAV ---------- */
   header.nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     background:rgba(255,255,255,0);
@@ -75,7 +74,6 @@
   .nav-toggle span{width:24px;height:2px;background:#fff;display:block;transition:.3s;}
   header.nav.scrolled .nav-toggle span{background:var(--ink);}
 
-  /* ---------- HERO ---------- */
   .hero{
     min-height:100vh;display:flex;align-items:center;position:relative;
     background:
@@ -126,12 +124,10 @@
   .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.6);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;}
   .scroll-hint .line{width:1px;height:42px;background:linear-gradient(rgba(255,255,255,.6),transparent);margin:.6rem auto 0;}
 
-  /* ---------- SECTIONS ---------- */
   section{padding:120px 0;}
   .section-head{margin-bottom:64px;}
   .alt{background:var(--cream);}
 
-  /* About */
   .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:start;}
   .about-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:38px;box-shadow:0 24px 60px rgba(26,29,35,.06);}
   .about-card h3{font-size:1.5rem;margin-bottom:1.2rem;}
@@ -146,7 +142,6 @@
   .facts .what{color:var(--ink-soft);font-size:.96rem;}
   .facts .what b{color:var(--ink);font-weight:500;}
 
-  /* Research areas */
   .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .area{
     border:1px solid var(--line);border-radius:4px;padding:34px 30px;background:var(--paper);
@@ -159,7 +154,6 @@
   .area h3{font-size:1.32rem;margin:.7rem 0 .7rem;}
   .area p{font-size:.92rem;color:var(--ink-soft);}
 
-  /* Awards */
   .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;}
   .award{display:grid;grid-template-columns:88px 1fr;gap:1.4rem;padding:28px 0;border-bottom:1px solid var(--line);align-items:start;}
   .award .yr{font-family:var(--serif);font-size:1.9rem;color:var(--accent);font-weight:600;line-height:1;}
@@ -167,7 +161,6 @@
   .award p{font-size:.92rem;color:var(--ink-soft);}
   .award .venue{color:var(--gold);font-weight:500;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:.3rem;}
 
-  /* Publications */
   .pubs{counter-reset:pub;}
   .pub{
     display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:baseline;
@@ -188,7 +181,6 @@
   .role-badge{font-size:.68rem;letter-spacing:.05em;padding:.32rem .8rem;border-radius:100px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--gold),#8f6f38);white-space:nowrap;}
   .role-badge.sci-badge{background:linear-gradient(135deg,var(--accent-bright),var(--accent));}
 
-  /* News / Recent work feed */
   .news{max-width:840px;}
   .news-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:26px 0;border-bottom:1px solid var(--line);align-items:start;transition:.3s;}
   .news-item:hover{padding-left:10px;}
@@ -198,7 +190,6 @@
   .news-body .cat{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:.35rem;}
   @media(max-width:680px){ .news-item{grid-template-columns:1fr;gap:.5rem;} .news-item:hover{padding-left:0;} }
 
-  /* Patents */
   .patents{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
   .patent{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:30px;display:flex;gap:1.2rem;}
   .patent .ic{font-family:var(--serif);font-size:1.6rem;color:var(--gold);line-height:1;}
@@ -207,7 +198,6 @@
   .patent .no{font-size:.82rem;color:var(--accent);font-weight:500;letter-spacing:.04em;}
   .patent .role{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
 
-  /* Projects timeline */
   .timeline{position:relative;margin-left:8px;}
   .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line);}
   .tl{position:relative;padding:0 0 34px 42px;}
@@ -216,7 +206,6 @@
   .tl h3{font-size:1.12rem;font-family:var(--sans);font-weight:500;letter-spacing:0;margin-top:.25rem;color:var(--ink);}
   .tl .zh{display:block;font-family:var(--tc);font-size:.9rem;font-weight:400;color:var(--ink-soft);margin-top:.25rem;}
 
-  /* Lab */
   .lab-intro{display:grid;grid-template-columns:1fr;gap:60px;align-items:center;margin-bottom:64px;max-width:760px;margin-left:auto;margin-right:auto;}
   .lab-panel{background:linear-gradient(160deg,#142844,#1f3a5f);color:#fff;border-radius:6px;padding:54px 46px;}
   .lab-panel .eyebrow{color:var(--gold);}
@@ -241,13 +230,11 @@
   .chip:hover{border-color:var(--gold);color:var(--accent);}
   .chip .grade{color:var(--muted);font-size:.78rem;margin-right:.4rem;}
 
-  /* Service */
   .service{columns:2;column-gap:56px;}
   .svc{break-inside:avoid;display:flex;gap:1.2rem;padding:18px 0;border-bottom:1px solid var(--line);}
   .svc .yr{font-family:var(--serif);font-weight:600;color:var(--accent);min-width:74px;font-size:1rem;}
   .svc p{font-size:.94rem;color:var(--ink-soft);}
 
-  /* PI Experience */
   .pi-list{display:flex;flex-direction:column;}
   .pi-item{display:grid;grid-template-columns:150px 1fr;gap:1.6rem;padding:24px 0;border-bottom:1px solid var(--line);align-items:start;}
   .pi-role{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;border-radius:100px;font-weight:600;white-space:nowrap;justify-self:start;}
@@ -258,7 +245,6 @@
   .pi-item .grant{font-size:.78rem;color:var(--gold);font-weight:500;letter-spacing:.03em;margin-top:.35rem;display:block;}
   @media(max-width:680px){ .pi-item{grid-template-columns:1fr;gap:.6rem;} }
 
-  /* Contact */
   .contact{background:#0d1626;color:#fff;text-align:center;}
   .contact .eyebrow{color:var(--gold);}
   .contact h2{color:#fff;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:1.2rem;}
@@ -274,7 +260,6 @@
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease;}
   .reveal.in{opacity:1;transform:none;}
 
-  /* ---------- RESPONSIVE ---------- */
   @media(max-width:920px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-portrait{display:flex;order:-1;justify-self:center;max-width:180px;margin-bottom:10px;}
@@ -303,7 +288,6 @@
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">Chung-I&nbsp;Huang<span class="dot">.</span></a>
@@ -320,7 +304,6 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
@@ -347,7 +330,6 @@
   <div class="scroll-hint">Scroll<div class="line"></div></div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section id="about" class="about">
   <div class="wrap">
     <div class="about-grid">
@@ -378,7 +360,6 @@
   </div>
 </section>
 
-<!-- ===== AWARDS ===== -->
 <section id="awards" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
@@ -415,7 +396,6 @@
   </div>
 </section>
 
-<!-- ===== RESEARCH ===== -->
 <section id="research">
   <div class="wrap">
     <div class="section-head reveal">
@@ -433,7 +413,6 @@
   </div>
 </section>
 
-<!-- ===== NEWS / RECENT WORK ===== -->
 <section id="news">
   <div class="wrap">
     <div class="section-head reveal">
@@ -466,7 +445,6 @@
   </div>
 </section>
 
-<!-- ===== PUBLICATIONS ===== -->
 <section id="publications" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
@@ -639,7 +617,6 @@
   </div>
 </section>
 
-<!-- ===== PI EXPERIENCE ===== -->
 <section id="pi-experience">
   <div class="wrap">
     <div class="section-head reveal">
@@ -648,71 +625,20 @@
       <p class="section-sub">Principal Investigator and Co-Principal Investigator roles on funded research projects.</p>
     </div>
     <div class="pi-list">
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>PGNN Model Algorithm Enhancement Project<span class="zh">PGNN模型演算法擴增研發案</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>Smart Traffic Congestion Prediction &amp; Signal Optimization System<span class="zh">智慧交通－即時車流壅塞預測與號誌優化系統</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role copi">共同計畫主持人</span>
-        <div>
-          <h3>Synthetic Data Generation for Real-World Gait Recognition via Pose Detection &amp; Image Inpainting (2)<span class="zh">基於姿態偵測與影像修復針對真實場域步態辨識所需之合成資料生成方法 (2)</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role copi">共同計畫主持人</span>
-        <div>
-          <h3>MOE AI Talent Cultivation Program — AI Outreach Education for K-12<span class="zh">教育部人工智慧人才培育計畫－人工智慧中小學推廣教育</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role copi">共同計畫主持人</span>
-        <div>
-          <h3>Gait-Energy-Map-Based Pedestrian Tracking &amp; Gait Recognition for Complex Long-Distance Motion<span class="zh">針對遠距離複雜行人運動的基於步態能量圖之行人追蹤與步態辨識</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>Taichung City Government — World Flora Exposition, Fengyuan Huludun Park Visitor-Flow Monitoring Service<span class="zh">台中市政府 世界花卉博覽會豐原葫蘆墩公園人流監測服務案</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>NMMST — Pilot Study on Visitor Counting &amp; Crowd Estimation via Image Recognition &amp; Big Data<span class="zh">國立海洋科技博物館，基於影像辨識與大數據分析技術之遊客人數與人群估算系統先導研究</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>NMMST — Pilot Study on Visitor Hotspot &amp; Age Analysis via Image Recognition &amp; Big Data<span class="zh">國立海洋科技博物館，基於影像辨識與大數據分析技術之遊客參訪熱點與年齡分析系統先導研究</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>NMMST — Outsourced Research on VR/AR/MR Applications for Marine Science Content Collection &amp; Exhibition<span class="zh">國立海洋科技博物館，應用虛擬／擴增／混合實境技術於海洋科學與科技題材蒐集與展示模式委外研究</span></h3>
-        </div>
-      </div>
-      <div class="pi-item reveal">
-        <span class="pi-role pi">計畫主持人</span>
-        <div>
-          <h3>Ruentex Group / Ruentex Engineering &amp; Construction — Rebar Inspection Technology R&amp;D<span class="zh">潤泰集團潤弘精密工程，鋼筋檢測技術研發</span></h3>
-        </div>
-      </div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>PGNN Model Algorithm Enhancement Project<span class="zh">PGNN模型演算法擴增研發案</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>Smart Traffic Congestion Prediction &amp; Signal Optimization System<span class="zh">智慧交通－即時車流壅塞預測與號誌優化系統</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role copi">共同計畫主持人</span><div><h3>Synthetic Data Generation for Real-World Gait Recognition via Pose Detection &amp; Image Inpainting (2)<span class="zh">基於姿態偵測與影像修復針對真實場域步態辨識所需之合成資料生成方法 (2)</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role copi">共同計畫主持人</span><div><h3>MOE AI Talent Cultivation Program — AI Outreach Education for K-12<span class="zh">教育部人工智慧人才培育計畫－人工智慧中小學推廣教育</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role copi">共同計畫主持人</span><div><h3>Gait-Energy-Map-Based Pedestrian Tracking &amp; Gait Recognition for Complex Long-Distance Motion<span class="zh">針對遠距離複雜行人運動的基於步態能量圖之行人追蹤與步態辨識</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>Taichung City Government — World Flora Exposition, Fengyuan Huludun Park Visitor-Flow Monitoring Service<span class="zh">台中市政府 世界花卉博覽會豐原葫蘆墩公園人流監測服務案</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>NMMST — Pilot Study on Visitor Counting &amp; Crowd Estimation via Image Recognition &amp; Big Data<span class="zh">國立海洋科技博物館，基於影像辨識與大數據分析技術之遊客人數與人群估算系統先導研究</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>NMMST — Pilot Study on Visitor Hotspot &amp; Age Analysis via Image Recognition &amp; Big Data<span class="zh">國立海洋科技博物館，基於影像辨識與大數據分析技術之遊客參訪熱點與年齡分析系統先導研究</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>NMMST — Outsourced Research on VR/AR/MR Applications for Marine Science Content Collection &amp; Exhibition<span class="zh">國立海洋科技博物館，應用虛擬／擴增／混合實境技術於海洋科學與科技題材蒐集與展示模式委外研究</span></h3></div></div>
+      <div class="pi-item reveal"><span class="pi-role pi">計畫主持人</span><div><h3>Ruentex Group / Ruentex Engineering &amp; Construction — Rebar Inspection Technology R&amp;D<span class="zh">潤泰集團潤弘精密工程，鋼筋檢測技術研發</span></h3></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== PATENTS ===== -->
 <section id="patents">
   <div class="wrap">
     <div class="section-head reveal">
@@ -721,31 +647,14 @@
       <p class="section-sub">Four granted patents in Taiwan (ROC) and the United States — all as first inventor.</p>
     </div>
     <div class="patents">
-      <div class="patent reveal">
-        <div class="ic">◆</div>
-        <div><h3 class="zh">物品數量估算方法</h3>
-        <div class="no">ROC 509212</div><div class="role">First Inventor · 第一發明人</div></div>
-      </div>
-      <div class="patent reveal">
-        <div class="ic">◆</div>
-        <div><h3>Method for Estimating a Number of Objects</h3>
-        <div class="no">US 9,519,960</div><div class="role">First Inventor · 第一發明人</div></div>
-      </div>
-      <div class="patent reveal">
-        <div class="ic">◆</div>
-        <div><h3 class="zh">以影像為基礎之車輛計數與分類系統</h3>
-        <div class="no">ROC I640964</div><div class="role">First Inventor · 第一發明人</div></div>
-      </div>
-      <div class="patent reveal">
-        <div class="ic">◆</div>
-        <div><h3>Image Based Vehicle Classification System</h3>
-        <div class="no">US 10,572,741</div><div class="role">First Inventor · 第一發明人</div></div>
-      </div>
+      <div class="patent reveal"><div class="ic">◆</div><div><h3 class="zh">物品數量估算方法</h3><div class="no">ROC 509212</div><div class="role">First Inventor · 第一發明人</div></div></div>
+      <div class="patent reveal"><div class="ic">◆</div><div><h3>Method for Estimating a Number of Objects</h3><div class="no">US 9,519,960</div><div class="role">First Inventor · 第一發明人</div></div></div>
+      <div class="patent reveal"><div class="ic">◆</div><div><h3 class="zh">以影像為基礎之車輛計數與分類系統</h3><div class="no">ROC I640964</div><div class="role">First Inventor · 第一發明人</div></div></div>
+      <div class="patent reveal"><div class="ic">◆</div><div><h3>Image Based Vehicle Classification System</h3><div class="no">US 10,572,741</div><div class="role">First Inventor · 第一發明人</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROJECTS (hidden — remove style="display:none;" below to show again) ===== -->
 <section id="projects" class="alt" style="display:none;">
   <div class="wrap">
     <div class="section-head reveal">
@@ -784,7 +693,6 @@
   </div>
 </section>
 
-<!-- ===== LAB ===== -->
 <section id="lab">
   <div class="wrap">
     <div class="section-head reveal">
@@ -829,7 +737,6 @@
   </div>
 </section>
 
-<!-- ===== SERVICE ===== -->
 <section id="service" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
@@ -837,6 +744,8 @@
       <h2 class="section-title">Beyond the lab</h2>
     </div>
     <div class="service">
+      <div class="svc reveal"><span class="yr">2026</span><p><b style="color:var(--ink);">計算機概論 (EMI)</b><br>Introduction to Computer Science (EMI) · National Chung Hsing University</p></div>
+      <div class="svc reveal"><span class="yr">2026</span><p><b style="color:var(--ink);">影像處理與深度學習應用</b><br>Image Processing and Deep Learning Applications · National Chung Hsing University</p></div>
       <div class="svc reveal"><span class="yr">2025</span><p>Industrial Chair, IEEE Conference on Advanced Video and Signal-Based Surveillance (AVSS)</p></div>
       <div class="svc reveal"><span class="yr">2024–25</span><p>Adjunct Assistant Professor, Power Mechanical Engineering, National Tsing Hua University</p></div>
       <div class="svc reveal"><span class="yr">2021</span><p>Co-director, Ministry of Education AI Talent Cultivation Program</p></div>
@@ -846,7 +755,6 @@
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="reveal">
@@ -871,18 +779,15 @@
 </footer>
 
 <script>
-  // Nav scroll state
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
   window.addEventListener('scroll', onScroll); onScroll();
 
-  // Mobile menu
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }

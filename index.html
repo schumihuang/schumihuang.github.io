@@ -219,6 +219,14 @@
   .stat{border:1px solid var(--line);border-radius:4px;padding:30px;text-align:center;background:var(--paper);}
   .stat .n{font-family:var(--serif);font-size:2.6rem;color:var(--accent);font-weight:600;line-height:1;}
   .stat .l{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.6rem;}
+
+  .member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px;margin-top:14px;}
+  .member-card{background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;}
+  .member-photo{aspect-ratio:4/3;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;}
+  .member-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+  .member-info{padding:16px 18px;}
+  .member-name{font-family:var(--tc);font-size:1rem;font-weight:500;color:var(--ink);}
+  .member-detail{font-size:.78rem;color:var(--muted);margin-top:3px;}
   .members{margin-top:10px;}
   .member-group{margin-bottom:30px;}
   .member-group h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;}
@@ -718,10 +726,10 @@
     <div class="members reveal">
       <div class="member-group">
         <h4>碩士班學生</h4>
-        <div class="member-chips">
-          <span class="chip"><span class="grade">115</span>涂允澤</span>
-          <span class="chip"><span class="grade">115</span>詹益偉</span>
-          <span class="chip">南舞良多瑛美</span>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-photo">Photo coming soon</div><div class="member-info"><div class="member-name">涂允澤</div><div class="member-detail">115 · 碩士班學生</div></div></div>
+          <div class="member-card"><div class="member-photo"><img src="assets/students/zhan-yi-wei-original.png" alt="詹益瑋" onerror="this.style.display='none';this.parentNode.append('Photo coming soon')"></div><div class="member-info"><div class="member-name">詹益瑋</div><div class="member-detail">115 · 碩士班學生</div></div></div>
+          <div class="member-card"><div class="member-photo">Photo coming soon</div><div class="member-info"><div class="member-name">南舞良多瑛美</div><div class="member-detail">碩士班學生</div></div></div>
         </div>
       </div>
       <div class="member-group">

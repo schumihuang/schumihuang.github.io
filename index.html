@@ -222,8 +222,9 @@
 
   .member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px;margin-top:14px;}
   .member-card{background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;}
-  .member-photo{aspect-ratio:4/3;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;}
-  .member-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+  .member-photo{aspect-ratio:3/4;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;overflow:hidden;}
+  .member-photo-link{display:block;}
+  .member-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;}
   .member-info{padding:16px 18px;}
   .member-name{font-family:var(--tc);font-size:1rem;font-weight:500;color:var(--ink);}
   .member-detail{font-size:.78rem;color:var(--muted);margin-top:3px;}
@@ -728,7 +729,7 @@
         <h4>碩士班學生</h4>
         <div class="member-grid">
           <div class="member-card"><div class="member-photo">Photo coming soon</div><div class="member-info"><div class="member-name">涂允澤</div><div class="member-detail">115 · 碩士班學生</div></div></div>
-          <div class="member-card"><div class="member-photo"><img src="assets/students/zhan-yi-wei-original.jpg" alt="詹益瑋" onerror="this.onerror=null;this.src='assets/students/zhan-yi-wei-240.jpg?v=4'"></div><div class="member-info"><div class="member-name">詹益瑋</div><div class="member-detail">115 · 碩士班學生</div></div></div>
+          <div class="member-card"><a class="member-photo-link" href="assets/students/CEW.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看詹益瑋原始照片"><div class="member-photo"><img src="assets/students/CEW.jpg" alt="詹益瑋" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">詹益瑋</div><div class="member-detail">115 · 碩士班學生</div></div></div>
           <div class="member-card"><div class="member-photo">Photo coming soon</div><div class="member-info"><div class="member-name">南舞良多瑛美</div><div class="member-detail">碩士班學生</div></div></div>
         </div>
       </div>

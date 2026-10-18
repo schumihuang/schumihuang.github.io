@@ -729,9 +729,9 @@
       <div class="member-group">
         <h4>碩士班學生</h4>
         <div class="member-grid">
-          <div class="member-card"><a class="member-photo-link" href="assets/students/TYZ-full.webp" target="_blank" rel="noopener noreferrer" aria-label="查看涂允澤照片"><div class="member-photo"><img class="member-photo-img-natural" src="assets/students/TYZ-full.webp" alt="涂允澤" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">涂允澤</div><div class="member-detail">115 · 碩士班學生</div></div></div>
+          <div class="member-card"><a class="member-photo-link" href="assets/students/TYZ-full.webp" data-original-photo="assets/students/lab_img_cut.JPG" target="_blank" rel="noopener noreferrer" aria-label="查看涂允澤照片"><div class="member-photo"><img class="member-photo-img-natural" src="assets/students/TYZ-full.webp" alt="涂允澤" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">涂允澤</div><div class="member-detail">115 · 碩士班學生</div></div></div>
           <div class="member-card"><a class="member-photo-link" href="assets/students/CEW.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看詹益瑋原始照片"><div class="member-photo"><img src="assets/students/CEW.jpg" alt="詹益瑋" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">詹益瑋</div><div class="member-detail">115 · 碩士班學生</div></div></div>
-          <div class="member-card"><a class="member-photo-link" href="assets/students/Amee.webp" target="_blank" rel="noopener noreferrer" aria-label="查看南舞良多瑛美照片"><div class="member-photo"><img class="member-photo-img-natural" src="assets/students/Amee.webp" alt="南舞良多瑛美" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">南舞良多瑛美</div><div class="member-detail">115 · 碩士班學生</div></div></div>
+          <div class="member-card"><a class="member-photo-link" href="assets/students/Amee.webp" data-original-photo="assets/students/Amee.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看南舞良多瑛美照片"><div class="member-photo"><img class="member-photo-img-natural" src="assets/students/Amee.webp" alt="南舞良多瑛美" loading="lazy" decoding="async"></div></a><div class="member-info"><div class="member-name">南舞良多瑛美</div><div class="member-detail">115 · 碩士班學生</div></div></div>
         </div>
       </div>
       <div class="member-group">
@@ -799,6 +799,16 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Open source-resolution photographs when present; keep existing images as fallback.
+  document.querySelectorAll('.member-photo-link[data-original-photo]').forEach(link => {
+    const original = link.getAttribute('data-original-photo');
+    fetch(original, {method:'HEAD'}).then(response => {
+      if (response.ok && (response.headers.get('content-type') || '').startsWith('image/')) {
+        link.href = original;
+      }
+    }).catch(() => {});
+  });
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {

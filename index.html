@@ -180,6 +180,9 @@
   .pub .roles{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0;}
   .role-badge{font-size:.68rem;letter-spacing:.05em;padding:.32rem .8rem;border-radius:100px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--gold),#8f6f38);white-space:nowrap;}
   .role-badge.sci-badge{background:linear-gradient(135deg,var(--accent-bright),var(--accent));}
+  .resource-links{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.7rem;font-size:.85rem;}
+  .resource-links a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+  .resource-links a:hover{color:var(--accent-bright);}
 
   .news{max-width:840px;}
   .news-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:26px 0;border-bottom:1px solid var(--line);align-items:start;transition:.3s;}
@@ -380,6 +383,15 @@
     </div>
     <div class="awards">
       <div class="award reveal">
+        <div class="yr">’26</div>
+        <div>
+          <span class="venue">ECCV 2026 · AI City Challenge</span>
+          <h3>PSI VQA Champion · 行人意圖問答冠軍</h3>
+          <p>Egocentric Dashcam Pedestrian Intent (PSI VQA) · Team 30 UWIPL_ETRI.</p>
+          <p class="resource-links"><a href="https://www.aicitychallenge.org/2026-challenge-winners/" target="_blank" rel="noopener noreferrer">Challenge Winners 2026</a><a href="https://openreview.net/forum?id=iMySPA2EQ7" target="_blank" rel="noopener noreferrer">UniTraffic · Paper</a></p>
+        </div>
+      </div>
+      <div class="award reveal">
         <div class="yr">’25</div>
         <div><span class="venue">ICCV 2025 · Track 3</span><h3>Accuracy Champion · 全球準確度冠軍</h3><p>Warehouse Spatial Question Answering with an LLM Agent.</p></div>
       </div>
@@ -429,9 +441,19 @@
     <div class="section-head reveal">
       <div class="eyebrow">Latest from the Lab</div>
       <h2 class="section-title">News</h2>
-      <p class="section-sub">The five most recent journal papers from the AICV Lab, newest first.</p>
+      <p class="section-sub">Research publications, awards, and updates from the AICV Lab.</p>
     </div>
     <div class="news">
+      <article class="news-item reveal">
+        <div class="news-date"><time datetime="2026-09-08">2026 · 09</time></div>
+        <div class="news-body">
+          <span class="cat">Challenge Winners 2026 · ECCV AI City Challenge</span>
+          <h3>恭喜團隊榮獲 ECCV 2026 AI City Challenge PSI VQA 冠軍</h3>
+          <p>Egocentric Dashcam Pedestrian Intent (PSI VQA) · Team 30 UWIPL_ETRI.</p>
+          <p>UniTraffic: Evidence-Centric Agentic Video Reasoning Across Traffic Anomalies, Violations, and Intent</p>
+          <p class="resource-links"><a href="https://www.aicitychallenge.org/2026-challenge-winners/" target="_blank" rel="noopener noreferrer">官方得獎名單</a><a href="https://openreview.net/forum?id=iMySPA2EQ7" target="_blank" rel="noopener noreferrer">OpenReview 論文</a></p>
+        </div>
+      </article>
       <article class="news-item reveal">
         <div class="news-date">2026</div>
         <div class="news-body"><span class="cat">賀～論文正式發表 · IET Intelligent Transport Systems · First &amp; Corresponding author</span><h3>MAS-Mamba: A Compact Missing-Aware Selective State-Space Model with Calibrated Uncertainty for Short-Term Traffic Forecasting under Sensor Outages</h3></div>
@@ -462,6 +484,7 @@
       <div class="eyebrow">Journal Publications</div>
       <h2 class="section-title">Publications</h2>
       <p class="section-sub">Complete list of journal publications — <b>C.-I. Huang</b> shown in bold.</p>
+      <p class="resource-links"><a href="#conference-publications">精選研討會論文 · Selected Conference Publications</a></p>
     </div>
     <div class="pubs">
       <div class="pub reveal">
@@ -623,6 +646,29 @@
           <span class="meta">Journal of Medical and Biological Engineering · Aug. 2008 · 28(3):101–105</span>
         </div>
         <span class="badge sci">SCI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conference-publications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Conference &amp; Workshop Papers</div>
+      <h2 class="section-title">Selected Conference Publications</h2>
+      <p class="section-sub">Selected conference and workshop papers — <b>Chung-I Huang</b> shown in bold.</p>
+    </div>
+    <div class="pubs">
+      <div class="pub reveal">
+        <span class="idx"></span>
+        <div>
+          <span class="authors">Jianxu Shangguan, Sangwon Kim, Hsiang-Wei Huang, Wei-Chieh (Winston) Sun, Junbin Lu, Pyongkun Kim, Kwang-Ju Kim, <b>Chung-I Huang</b>, and Jenq-Neng Hwang</span>
+          <span class="title"><a href="https://openreview.net/forum?id=iMySPA2EQ7" target="_blank" rel="noopener noreferrer">"UniTraffic: Evidence-Centric Agentic Video Reasoning Across Traffic Anomalies, Violations, and Intent"</a></span>
+          <span class="roles"><span class="role-badge">PSI VQA Champion</span></span>
+          <span class="meta">ECCV 2026 Workshops · AI City Challenge · Sep. 2026</span>
+          <p class="resource-links"><a href="https://openreview.net/forum?id=iMySPA2EQ7" target="_blank" rel="noopener noreferrer">OpenReview</a><a href="https://www.aicitychallenge.org/2026-challenge-winners/" target="_blank" rel="noopener noreferrer">Challenge Winners 2026</a></p>
+        </div>
+        <span class="badge sci">Workshop</span>
       </div>
     </div>
   </div>
